@@ -1,1 +1,1 @@
-git pull origin KaryaKunj
+git pull 
