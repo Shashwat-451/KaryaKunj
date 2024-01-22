@@ -1,0 +1,48 @@
+.dashboard_container{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+   
+}
+.sidebar{
+    background-color: black;
+    width: 15%;
+}
+.dashboardmain{
+    background-color: white;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+}
+.generalinfo{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: rgb(22, 29, 41);
+    color: white;
+}
+.main1{
+    width: 100%;
+    gap: 30px;
+    background-color: rgb(22, 29, 41);
+    color: white;
+    margin-bottom: 40px;
+}
+
+.main2{
+    width: 100%;
+    gap: 30px;
+    background-color: rgb(22, 29, 41);
+    color: white;
+    margin-bottom: 40px;
+}
+
+.main3{
+    width: 100%;
+    gap: 30px;
+    background-color: rgb(22, 29, 41);
+    color: white;
+    margin-bottom: 40px;
+}

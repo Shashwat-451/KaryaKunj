@@ -1,0 +1,38 @@
+.window1{
+    border:25px solid rgb(255, 194, 229);
+    border-radius: 80px 80px 0 0;
+    background-color: rgb(255, 194, 229);
+}
+.windows p{
+   width:130px
+}
+.window1 img{
+    border-radius: 55px 55px 0 0;
+}
+.window2{
+
+    border:25px solid rgb(255, 220, 113);
+    border-radius: 80px 80px 0 0;
+    background-color: rgb(255, 220, 113);
+}
+.window2 img{
+    border-radius: 55px 55px 0 0;
+}
+.window3{
+
+    border:25px solid rgb(217, 241, 255);
+    border-radius: 80px 80px 0 0;
+    background-color:rgb(217, 241, 255);
+}
+.window3 img{
+    border-radius: 55px 55px 0 0;
+}
+.deal1{
+  background-color:rgb(217, 241, 255) ;
+}
+.deal2{
+   background-color:rgb(236, 218, 242) ;
+}
+.deal3{
+    background-color: rgb(255, 237, 222);
+}
