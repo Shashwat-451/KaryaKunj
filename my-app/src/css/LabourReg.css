@@ -1,0 +1,23 @@
+.labourregisterform{
+    width: 800px;
+    height: 700px;
+    margin: auto;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.labourregisterform input,textarea{
+    width: 500px;
+   
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 10px;
+}

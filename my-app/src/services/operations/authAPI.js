@@ -1,6 +1,15 @@
-import { setUser } from "../../slices/authSlice"
+
+// import {setToken} from "../../slices/authSlice"
 import { apiConnector } from "../apiConnector"
 import { useNavigate } from "react-router-dom"
+import { useDispatch, useSelector } from 'react-redux'
+// import { toast } from "react-hot-toast"
+
+import { setLoading, setToken } from "../../slices/authSlice"
+
+import { setUser } from "../../slices/profileSlice"
+
+
 
 // const {
 //   SENDOTP_API,
@@ -40,11 +49,11 @@ import { useNavigate } from "react-router-dom"
 
 export function signUp(
 
-  firstName,
-  lastName,
+  firstname,
+  lastname,
   email,
   password,
-  confirmPassword,
+  confirmpassword,
   accounttype,
 )
 {
@@ -55,11 +64,11 @@ export function signUp(
     // dispatch(setLoading(true))
     try {
       const response = await apiConnector("POST", "http://localhost:4000/user/signup", {
-        firstName,
-        lastName,
+        firstname,
+        lastname,
         email,
         password,
-        confirmPassword,
+        confirmpassword,
         accounttype,
       })
 
@@ -80,37 +89,56 @@ export function signUp(
   }
 }
 
-export function login(email, password, navigate) {
+export function login(email, password){
   
   return async (dispatch) => {
     // const toastId = toast.loading("Loading...")
     // dispatch(setLoading(true))
+    console.log("iubuwiernvoinrwi1");
     try {
-      const response = await apiConnector("POST","/login", {
+      const response = await apiConnector("POST","http://localhost:4000/user/login", {
         email,
         password,
       })
-
+      console.log("iubuwiernvoinrwi2");
+     console.log("Response from server",response);
+  
+    
       console.log("LOGIN API RESPONSE............", response)
-
-      if (!response.data.success) {
-        throw new Error(response.data.message)
-      }
-
+      console.log("toke",response.data.token)
       // toast.success("Login Successful")
-      // dispatch(setToken(response.data.token))
-      // const userImage = response.data?.user?.image
-      //   ? response.data.user.image
-      //   : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.user.firstName} ${response.data.user.lastName}`
-      // dispatch(setUser({ ...response.data.user, image: userImage }))
+      dispatch(setToken(response.data.token))
+      //  console.log(token)
+      // const userImage = response.data?.existinguser?.image
+      //   ? response.data.existinguser.image
+      //   : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.existinguser.firstname} ${response.data.existinguser.lastname}`
+     dispatch(setUser(response.data.existinguser))
+      // dispatch(setUser({ ...response.data.existinguser, image: userImage }))
       // localStorage.setItem("token", JSON.stringify(response.data.token))
       // navigate("/dashboard/my-profile")
+      console.log("Inside operations token is",response.data.token);
+      
     } catch (error) {
       console.log("LOGIN API ERROR............", error)
       // toast.error("Login Failed")
     }
+    console.log("iubuwiernvoinrwi");
     // dispatch(setLoading(false))
     // toast.dismiss(toastId)
+    let response;
+        try {
+      response = await apiConnector("POST", "http://localhost:4000/user/login", {
+        email,
+        password
+      })
+     
+    }
+      catch(err){
+           console.log(err);
+      }
+
+
+      console.log(response);
   }
 }
 
@@ -168,14 +196,14 @@ export function login(email, password, navigate) {
 //   }
 // }
 
-// export function logout(navigate) {
-//   return (dispatch) => {
-//     dispatch(setToken(null))
-//     dispatch(setUser(null))
-//     dispatch(resetCart())
-//     localStorage.removeItem("token")
-//     localStorage.removeItem("user")
-//     toast.success("Logged Out")
-//     navigate("/")
-//   }
-// }
+export function logout(navigate) {
+  return (dispatch) => {
+    dispatch(setToken(null))
+    dispatch(setUser(null))
+    // dispatch(resetCart())
+    localStorage.removeItem("token")
+    localStorage.removeItem("user")
+    // toast.success("Logged Out")
+    navigate("/")
+  }
+}

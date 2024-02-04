@@ -88,48 +88,48 @@ const alldata=[
     
     {
         name:"Commode",
-        category:"Plumbing and Sanitory",
+        category:"Plumbing and Sanitary",
         img:img9
 
     },
     {
         name:"Wash Basin",
-        category:"Plumbing and Sanitory",
+        category:"Plumbing and Sanitary",
         img:img10
 
     },
     {
         name:"One Piece Commode",
-        category:"Plumbing and Sanitory",
+        category:"Plumbing and Sanitary",
         img:img11
 
     },
     {
         name:"Two Piece Commode",
-        category:"Plumbing and Sanitory",
+        category:"Plumbing and Sanitary",
         img:img12
 
     },
     {
         name:"Cistern and Flush Tank",
-        category:"Plumbing and Sanitory",
+        category:"Plumbing and Sanitary",
         img:img13
 
     },
     {
         name:"Seat Cover",
-        category:"Plumbing and Sanitory",
+        category:"Plumbing and Sanitary",
         img:img14
 
     },
     {
         name:"Urinal",
-        category:"Plumbing and Sanitory",
+        category:"Plumbing and Sanitary",
         img:img15
 
     },
     {   name:"Flush Plate",
-        category:"Plumbing and Sanitory",
+        category:"Plumbing and Sanitary",
         img:img16
 
     },

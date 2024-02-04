@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import {useEffect} from 'react'
+import {useNavigate} from 'react-router-dom'
+import {useDispatch} from 'react-redux'
 import { Routes,Route } from 'react-router-dom';
 import Home from "./pages/Home"
 import Services from './pages/Services';
@@ -13,9 +16,36 @@ import LaborDashboard from './pages/Dashboard/LaborDashboard';
 import Contact from './pages/Contact';
 import Login from "../src/pages/Auth/Login"
 import SignUp from "../src/pages/Auth/SignUp"
+import Navbar from './components/Navbar';
+import AboutUs from '../src/pages/AboutUs'
+import Footer from './components/Footer';
+import { getUserDetails } from "./services/operations/profileAPI"
+import LabourRegisterForm from './pages/LabourRegisterForm';
+
 function App() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem("token");
+  
+    if (storedToken) {
+      try {
+        const token = JSON.parse(storedToken);
+        dispatch(getUserDetails(token, navigate));
+      } catch (error) {
+        console.error("Error parsing stored token:", error);
+        // Handle the error as needed, e.g., log it or show a user-friendly message
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  
+
   return (
     <>
+     <Navbar/>
      <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/services" element={<Services/>}/>
@@ -29,7 +59,10 @@ function App() {
       <Route path="/contactus" element={<Contact/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/signup" element={<SignUp/>}/>
+      <Route path="/aboutus" element={<AboutUs/>}/>
+      <Route path="/labourregister" element={<LabourRegisterForm/>}/>
      </Routes>
+     <Footer/>
     </>
   );
 }

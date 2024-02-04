@@ -1,0 +1,59 @@
+.stay h2{
+    font-size: 25px;
+    left:0;
+  }
+  
+  .stay h1 {
+      font-family: 'Merriweather', serif ;
+      margin: 20px auto;
+      color:Black;
+      text-align: center;
+      font-size: 30px;
+      max-width: 600px;
+      position: relative;
+      margin-top: -100px;
+    }
+   
+    .stay h1:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #a1a1a5;
+      right:-70%;
+      top: 50%;
+      position: absolute;
+    }
+  
+    .stay h1:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #a1a1a5;
+      left: -70%;
+      top: 50%;
+      position: absolute;
+    }
+    .underline h1:after{
+        content: "";
+        display: block;
+        width: 70%;
+        height: 2px;
+        background: #a1a1a5;
+        margin-top: 30px;
+        right:-15%;
+        top: 50%;
+        position: relative;   
+    }
+    .underline2 p:after{
+        content: "";
+        display: block;
+        width: 90%;
+        height: 2px;
+        background: #a1a1a5;
+        margin-top: 30px;
+        right:-5%;
+        top: 50%;
+        position: relative;   
+    }

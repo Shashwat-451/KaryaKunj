@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// const storedToken = localStorage.getItem("token");
 const initialState = {
+  registerData:null,
   signupData: null,
   loading: false,
   token: localStorage.getItem("token") ? JSON.parse(localStorage.getItem("token")) : null,
@@ -13,13 +15,16 @@ const authSlice = createSlice({
     setSignupData(state, value) {
       state.signupData = value.payload;
     },
+    setLabourRegisterData(state, value) {
+      state.registerData= value.payload;
+    },
     setLoading(state, value) {
       state.loading = value.payload;
     },
     setToken(state, value) {
       state.token = value.payload;
     },
-  },npm
+  },
 });
 
 export const { setSignupData, setLoading, setToken } = authSlice.actions;

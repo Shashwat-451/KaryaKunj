@@ -5,10 +5,10 @@ import Accordian from '../components/Accordian';
 function Project_Tracking(props) {
     return (
         <>
-             <div className='services_top'>
+             {/* <div className='services_top'>
               <img src={img} />
               <h1>Project Tracking Dashboard</h1>
-          </div>   
+          </div>    */}
 
           <Accordian/>
         </>

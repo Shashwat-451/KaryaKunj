@@ -12,7 +12,7 @@ function Accordian() {
     }
     return (
         <>
-            <div className='container'>
+            <div className='accordiancontainer'>
                 {
                     data.map((project,index)=>{
                         return(

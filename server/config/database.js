@@ -1,21 +1,17 @@
 const mongoose=require("mongoose");
-
 require("dotenv").config();
-const DB=process.env.Database_Url;
 
-const dbconnect=()=>{
-    mongoose.connect(process.env.Database_Url,{
+exports.dbconnect=()=>{
+    mongoose.connect("mongodb+srv://shash45:Shammy123@mernprojects.leehvmd.mongodb.net/?retryWrites=true&w=majority",{
         useNewUrlParser:true,
-        useUnifiedTopology:true
+        UseUnifiedTopology:true
     })
     .then(()=>{
-        console.log("DB Connection Successfull");
+        console.log("Databse Connected successfully");
     })
     .catch((err)=>{
-        console.log("Connection Failed");
+        console.log("Error in connecting");
         console.log(err);
         process.exit(1);
     })
 }
-
-module.exports={dbconnect};

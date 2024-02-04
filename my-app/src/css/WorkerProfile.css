@@ -1,0 +1,20 @@
+.workerrprofile_main{
+    width: 100vw;
+    height: auto;
+    margin: auto;
+    background-color: rgb(102, 117, 176)
+}
+
+.workerprofile_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.workerprofile_left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    background-color: rgb(62,73,116);
+}

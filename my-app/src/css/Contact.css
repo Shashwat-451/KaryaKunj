@@ -1,0 +1,82 @@
+/* .contactuswrapper{
+    background-image: url('../assets/images/BackgroundImage.png');
+    object-fit: cover;
+    background-repeat: no-repeat;
+    width: 1;
+    height: 100vh;
+} */
+
+
+.login_main {
+    width:"1200px";
+    height:"500px";
+    background-color:"black";
+    border:"5px solid black";
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .left{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .contactusleft img{
+    width: 65%;
+    margin-top: 30px;
+    height:auto;
+    
+}
+  .contactright input{
+    border: none;
+    outline: none; 
+    width: 80%;
+    height: 30px;
+    margin: 10px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .contactright textarea{
+    border: none;
+    outline: none; 
+    width: 80%;
+    height: 120px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  input::placeholder{
+    padding-left: 10px;
+  }
+
+  textarea::placeholder{
+    padding-left: 10px;
+  }
+.btn button{
+    border: none;
+    outline: none; 
+    background-color: rgb(230,179,53);
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.btn{
+    background-color: rgb(230,179,53);
+}
+.top_content{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.top_content h2,p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+   
+}
+.top_content h2{
+    font-weight: bold;
+    color: black;
+}
+
+.top_content p{
+    
+    color: rgb(111, 113, 114);
+}

@@ -7,8 +7,9 @@ import tiles from "../../assets/images/tiles.png"
 import sanitaryware from "../../assets/images/sanitary.png"
 import datacategories from "../../assets/data/Home_ShopTab"
 import alldata from "../../assets/data/Home_ShopTab2"
-
 import "../../css/Home_shop.css"
+import BootstrapCarouselComponent from '../../components/BootstrapCarouselComponent';
+import { FaArrowRight } from "react-icons/fa";
 
 
 function Home_shop(props) {
@@ -31,7 +32,7 @@ function Home_shop(props) {
     return (
         <>
             <div className='carousal_container'>
-            
+                <BootstrapCarouselComponent/>
             </div>
     
             <div className='windows' style={{display:'flex',alignItems:'center',justifyContent:"center",gap:"30px"}}>
@@ -70,34 +71,41 @@ function Home_shop(props) {
                 </div>
             </div>
 
-            <div style={{display:"flex"}} className='buttons'>
+            <div style={{display:"flex",alignItems:"center",justifyContent:"center",flexWrap:"wrap"}}>
                 {
                    datacategories.map((elem)=>{
                     return(
                         <>
-                           <div onClick={()=>handleClick(elem)}>{elem.title}</div>
-                           
+                           <div style={{display:"flex",alignItems:"center",justifyContent:"center",backgroundColor:"black",color:"white",padding:"10px",margin:"8px",borderRadius:"20px",cursor:"pointer",width:"auto",fontSize:"14px",fontFamily:"georgia",fontWeight:"bold"}} onClick={()=>handleClick(elem)}>{elem.title}</div>
+
                         </>
                     )
                       
                    })
                 }
             </div>
+            <div className="categoriesmain" >
                        {
                             data.map((elem)=>{
                                 return(
                                     <>
-                                      <div style={{display:"flex"}}>
-                                        <div>
+                                        <div className="categoriesboxes">
                                         <img src={elem.img}/>
-                                        <h2>{elem.name}</h2>
-                                        </div>
                                         
-                                      </div>
+                                        <div style={{display:"flex"}}>
+                                        <h2 style={{fontFamily:"georgia",fontWeight:"bold",fontSize:"15px"}}>{elem.name}</h2>
+                                        <div style={{}}>   <FaArrowRight /></div>
+                                     
+                                        </div>
+                                      
+                                        </div>
                                     </>
                                 )
                             })
-                           }
+                           
+                        }
+
+</div>
         </>
         
     );

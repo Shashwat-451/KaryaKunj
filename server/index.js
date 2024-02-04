@@ -1,18 +1,23 @@
 const express=require("express");
 const app=express();
+const userRoutes=require("./routes/userRoutes")
 const {dbconnect}=require("./config/database")
-const User=require("./routes/User")
-app.get("/",(req,res)=>{
-  return res.status(200).json({
-    success:true,
-    message:"Your server is up and runninh"
-  })
-})
-app.use(express.json())
+const cors = require("cors");
+app.use(
+	cors({
+		origin: "*",
+		credentials: true,
+	})
+);
+
+app.use(express.json());
+
+app.use("/user",userRoutes);
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
+
 dbconnect();
-app.use("/user",User);
 
 app.listen(4000,()=>{
-    console.log("Listening at port 4000");
+    console.log("Listening at 4000")
 })
-

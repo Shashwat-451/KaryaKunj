@@ -3,9 +3,11 @@ import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { setSignupData } from "../../slices/authSlice"
 import {signUp} from "../../services/operations/authAPI"
-
+import loginimage from "../../assets/images/login.jpg"
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
+
   const navigate=useNavigate()
   
   const dispatch = useDispatch()
@@ -14,8 +16,8 @@ const SignUp = () => {
     lastname:'',
     email: '',
     password: '',
-    confirmPassword: '',
-    accounttype:'',
+    confirmpassword: '',
+    accounttype:'Employer',
   });
 
   const handleInputChange = (e) => {
@@ -28,106 +30,76 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Validate the form data before submission
-    if (formData.password !== formData.confirmPassword) {
+    console.log("Hello This is data", formData)
+   
+    if (formData.password !== formData.confirmpassword) {
       alert('Passwords do not match');
       return;
     }
     const signupData = {
         ...formData,
       }
-               // To be used after otp verification
+             
     dispatch(setSignupData(signupData))
 
 
     console.log('Form data submitted:', formData);
-    const{firstName,lastName,email,password,confirmPassword,accounttype}=formData;
+  const{firstname,lastname,email,password,confirmpassword,accounttype}=formData;
   
+    dispatch(signUp(firstname,
+      lastname,
+      email,
+      password,
+      confirmpassword,
+      accounttype))
+
+
     setFormData({
     firstname: '',
     lastname:'',
     email: '',
     password: '',
-    confirmPassword: '',
+    confirmpassword: '',
     accounttype:'',
+    
     });
 
-    dispatch(signUp(firstName,
-      lastName,
-      email,
-      password,
-      confirmPassword,
-      accounttype))
+  
   };
 
   return (
-    <div>
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-      <label>
-          First Name:
-          <input
-            type="text"
-            name="firstname"
-            value={formData.firstname}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Last Name:
-          <input
-            type="text"
-            name="lastname"
-            value={formData.lastname}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Confirm Password:
-          <input
-            type="password"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleInputChange}
-          />
-        </label>
+  
+       <>
+       <div style={{ borderRadius: "100", display: "flex", width: "400px", height: "500px", backgroundColor: "black", justifyContent: "center", alignItems: "center", margin: "auto", marginBottom: "100px" }} className='login_main'>
 
-        <label>
-          accountType:
-          <input
-            type="text"
-            name="accounttype"
-            value={formData.accounttype}
-            onChange={handleInputChange}
-          />
-        </label>
+{/* <div style={{ width: "50%", height: "100%", backgroundColor: "white", alignItems: "center", margin: "auto" }} className='left'>
+  <img src={loginimage} />
+</div> */}
+<div style={{ display: "flex", gap: "4px", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "100%", height: "100%", backgroundColor: "white" }} className='right'>
+  <h3 style={{ fontFamily: "Georgia", color: "black" ,fontWeight:"bold"}}>SIGN UP</h3>
+  <h6 style={{ fontFamily: "Georgia", color: "rgb(111, 113, 114)" ,marginBottom:"25px"}}>Please sign up to Continue</h6>
+  <input onChange={handleInputChange} type='text' name="firstname" value={formData.firstname} placeholder='First Name'/>
+  <input onChange={handleInputChange} type='text' name="lastname" value={formData.lastname} placeholder='Last Name'/>
+  <input onChange={handleInputChange} type='text' name="email" value={formData.email} placeholder='Email'/>
+  <input onChange={handleInputChange} type='password' name="password" value={formData.password} placeholder='Password'/>
+  <input onChange={handleInputChange} type='password' name="confirmpassword" value={formData.confirmpassword} placeholder='Confirm Password'/>
+  <label htmlFor="selectOption">Sign Up As:
+  <select id="selectOption" name="accounttype" value={formData.accounttype}  onChange={handleInputChange}>
+        <option value="Employer">Employer</option>
+        <option value="Worker">Worker</option>
+ </select>
+  
+   </label> 
+   <p>Already have an Account? <Link to="/signup"><span>Login</span></Link></p>
+            <p>Or</p>
+  <div style={{marginTop:"30px"}} className='btn'>
+    <button styele={{ color: "white" }} className="btnauth" onClick={handleSubmit}>Sign Up</button>
+  </div>
+ </div>
 
-        <br />
-        <button type="submit">Sign Up</button>
-      </form>
-    </div>
+</div>
+    </>
+  
   );
 };
 

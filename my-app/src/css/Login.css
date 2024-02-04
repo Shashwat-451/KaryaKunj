@@ -1,0 +1,52 @@
+.login_main {
+  width:"1200px";
+  height:"500px";
+  background-color:"black";
+  border:"5px solid black";
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url("../assets/images/bg3.jpg");
+    background-size: cover; */
+}
+.left img{
+    width: 90%;
+    height: 90%;
+    
+}
+.right input{
+  width: 80%;
+  height: 30px;
+  margin: 10px;
+  border-radius: 50px;
+}
+
+
+.btnauth{
+    border: none;
+    outline: none; 
+    background-color: rgb(230,179,53);
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.btnauth{
+    background-color: rgb(230,179,53);
+}
+input::placeholder{
+    padding-left: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  textarea::placeholder{
+    padding-left: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .right{
+    background-image: url("../assets/images/bgloginside.png");
+    background-size: cover;
+  }

@@ -1,0 +1,26 @@
+.workertable{
+    display: flex;
+    flex-direction:column ;
+    width: 1200px;
+   
+
+}
+
+.workertable{
+    display: flex;
+    margin: 50px;
+    padding: 50px;
+    width: 1000px;
+
+    
+}
+
+.workerscolumns{
+    display: flex;
+    width: 1000px;
+
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    margin: 50px;
+    padding: 30px;
+}
+

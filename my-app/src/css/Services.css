@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: black;
     /* margin-top: 30px; */
 }
 .services_top img{
@@ -13,7 +14,7 @@
     width: 100%;
     position:absolute;
     object-fit: cover;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 .services_top h1{
   
@@ -21,8 +22,10 @@
         bottom: -10%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: #0a0808;
+        color: rgb(230,165,60);
         font-size: 40px;
         text-align: center;
+        font-weight: bold;
+
 }
 

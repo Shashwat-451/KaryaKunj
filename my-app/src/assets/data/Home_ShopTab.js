@@ -9,22 +9,18 @@ const filterdata = [
   },
   {
     id: "3",
-    title: "Kitchen",
-  },
-  {
-    id: "4",
     title: "Plumbing and Sanitary",
   },
   {
-    id: "5",
+    id: "4",
     title: "Wall and Floor Tiles",
   },
   {
-    id: "6",
+    id: "5",
     title: "Electrical",
   },
   {
-    id: "7",
+    id: "6",
     title: "Construction Materials",
   }
 ];
