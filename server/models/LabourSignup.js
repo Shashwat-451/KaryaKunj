@@ -17,7 +17,6 @@ const mongoose=require("mongoose");
     address:{
         type:String,
         required:true,
-        enum:["Employer","Worker"]
     },
     email:{
         type:String,
@@ -38,4 +37,4 @@ const mongoose=require("mongoose");
    
    })
 
-   module.exports=mongoose.model("Worker",userSchema);
+   module.exports=mongoose.model("WorkerRegister",userSchema);

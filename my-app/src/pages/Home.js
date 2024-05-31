@@ -6,9 +6,11 @@ import Testimonials from "../components/Testimonial"
 import Footer from "../components/Footer"
 import ServicesSection from '../components/ServicesSection';
 import "../css/Stay.css"
+import Navbar from '../components/Navbar';
 function Home(props) {
     return (
         <>
+        <Navbar/>
         <div className='section_landing' style={{marginBottom:"160px"}}> 
            <div className='content'>
             <h1 style={{fontFamily:"Georgia",fontWeight:"bold"}}>Unleash Construction Excellence with <span style={{color:"rgb(88,69,186"}}>We Build</span></h1>

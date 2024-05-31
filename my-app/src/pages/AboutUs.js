@@ -1,10 +1,11 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
 
 function AboutUs(props) {
     return (
-        <div>
-            
-        </div>
+        <>
+          <Navbar/>  
+        </>
     );
 }
 

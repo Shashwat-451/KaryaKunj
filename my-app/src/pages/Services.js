@@ -3,9 +3,11 @@ import header from "../assets/images/services8.jpg"
 import "../css/Services.css"
 import services_data from "../assets/data/ServicesContent"
 import { Link } from 'react-router-dom'
+import Navbar from '../components/Navbar';
 function Services(props) {
     return (
         <>
+        <Navbar/>
             <div className='services_top'>
                 <img src={header} />
                 <h1>Services</h1>

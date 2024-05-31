@@ -1,23 +1,66 @@
 .labourregisterform{
-    width: 800px;
-    height: 700px;
-    margin: auto;
-    background-color: aqua;
+    width: 500px;
+    height: 520px;
+    /* margin: auto; */
+    background-color:rgb(61, 49, 98);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 100px;
+    margin-top:"380px";
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    /* margin-left: 80px; */
+    padding: 40px;
+    background-image: url("../assets/images/bgloginside.png");
+    background-size: cover;
+   
 }
-
-.labourregisterform input,textarea{
+.divvi{
     width: 500px;
+    background-color:rgb(61, 49, 98);
+    height: 520px;
+    background-image: url("../assets/images/bgloginside.png");
+    background-size: cover;
+}
+.labourregisterform input,textarea{
+    width: 320px;
    
     text-decoration: none;
     outline: none;
     border: none;
     border-radius: 20px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    margin: 10px;
-    padding: 10px;
+    margin:5px;
+    padding: 3px;
 }
+textarea{
+    height: 31px;
+    outline: none;
+    text-decoration: none;
+    border: none;
+}
+
+/* .labourregisterformds{
+    height: 1200px;
+background-color: ;
+} */
+.labourregisterformdiv{
+    
+    padding:"60px";
+    width: 900px;
+    height: 520px;
+    margin: auto;
+    display: flex;
+    margin-top: 35px;
+    box-shadow: 0px 8px 16px 0px rgba(238, 238, 238, 0.8);
+}
+
+/* .labourregmain{
+    height: 1000px;
+} */
+
+.reversed-image {
+    transform: scaleX(-1);
+  }
+  

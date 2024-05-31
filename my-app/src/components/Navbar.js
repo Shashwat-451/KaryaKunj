@@ -15,6 +15,7 @@ function Navbar() {
     const navigate=useNavigate();
  const dispatch=useDispatch();
     const { token } = useSelector((state)=>state.auth)
+   
     // const authState = useSelector((state) => state.auth);
     // console.log("authstate is",authState)
     // const token = authState?authState.token : null;
@@ -38,7 +39,7 @@ function Navbar() {
 
     return (
         <>
-            <div style={{ fontFamily: "Georgia", backgroundColor: "white" }} className='navbar'>
+            <div className='navbar'>
                 <div className='logo'>
                     <img src={WeBuild} />
                 </div>
@@ -78,8 +79,10 @@ function Navbar() {
                     
                     </> 
                     } 
-
-                    {user && user.length > 0 &&user[0].accounttype=="Worker"&& <> 
+                     {/* {console.log("there is a user",user)}
+                     {console.log("there is a length",user.length)}
+                     {console.log("there is a accounttype",user[0].password)} */}
+                    {user && user.length > 0 &&user[0].accounttype=="Worker" && <> 
 
                     <NavLink onClick={()=>setIsDropped(!isdropped)} style={navLinkStyle}>Work</NavLink>
  
@@ -96,10 +99,13 @@ function Navbar() {
                         token===null && <NavLink style={navLinkStyle} to="/signup">Sign Up</NavLink>
                     }
                     {
-                        token!==null && <NavLink style={navLinkStyle} to="/dashboard">Dashboard</NavLink>
+                       user && user.length > 0  &&  user[0].accounttype=="Worker" &&  token!==null && <NavLink style={navLinkStyle} to="/dashboardl">Dashboard</NavLink>
                     }
-                     {
-                        token!==null && <button onClick={()=>dispatch(logout(navigate))} style={navLinkStyle} >Logout</button>
+                    {
+                       user && user.length > 0  &&  user[0].accounttype=="Employer" &&  token!==null && <NavLink style={navLinkStyle} to="/dashboarde">Dashboard</NavLink>
+                    }
+                    {
+                        token!==null && <p onClick={()=>dispatch(logout(navigate))} style={navLinkStyle} >Logout</p>
                     }
 
                 </div>
@@ -112,9 +118,11 @@ function Navbar() {
 const navLinkStyle = {
     textDecoration: 'none', // Remove underline
     // Set text color
+    cursor:"pointer",
     color: "grey",
     margin: '10px',
-    hover: "Underline"
+    hover: "Underline",
+    fontSize:"14px"
 };
 
 export default Navbar

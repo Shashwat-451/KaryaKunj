@@ -3,7 +3,13 @@
 .navbar{
     display: flex;
     flex-wrap: wrap;
-    
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .dropdown {
@@ -34,7 +40,10 @@
 
   }
   .links{
+    display: flex;
+    /* width:600px; */
     justify-content: flex-end;
+    margin-right: 20px;
   }
 
   .servicesdropdown{

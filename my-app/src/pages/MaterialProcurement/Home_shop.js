@@ -10,6 +10,7 @@ import alldata from "../../assets/data/Home_ShopTab2"
 import "../../css/Home_shop.css"
 import BootstrapCarouselComponent from '../../components/BootstrapCarouselComponent';
 import { FaArrowRight } from "react-icons/fa";
+import Navbar from '../../components/Navbar';
 
 
 function Home_shop(props) {
@@ -31,6 +32,7 @@ function Home_shop(props) {
     }
     return (
         <>
+        <Navbar/>
             <div className='carousal_container'>
                 <BootstrapCarouselComponent/>
             </div>

@@ -13,7 +13,7 @@ function Accordian_logic({project}) {
   console.log(project);
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <div>
+        <div >
             <div className='accordian_wrapper'>
                 <div style={{ display: 'flex' }} onClick={() => setIsOpen(!isOpen)} className='upper'>
                     <h2 style={{fontSize:"1rem",fontFamily:"georgia",fontWeight:"bold",marginRight:"20px"}}>{project.project_name}, {project.address}</h2>

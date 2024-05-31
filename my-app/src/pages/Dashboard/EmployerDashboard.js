@@ -6,10 +6,12 @@ import { CgProfile } from "react-icons/cg";
 import { GiProgression } from "react-icons/gi";
 import { FaMoneyBillWave } from "react-icons/fa";
 import { HiRectangleStack } from "react-icons/hi2";
+import Navbar from '../../components/Navbar';
 
 function EmployerDashboard(props) {
     return (
         <>
+           <Navbar/>
             <div className='dashboard_container'>
                 <div style={{ color: "white" }} className='sidebar'>
                     <div style={{ display: "flex" }} className='profile'>

@@ -3,6 +3,7 @@ import { Pie } from 'react-chartjs-2';
 import { Chart, ArcElement } from 'chart.js'
 import { FaEdit } from "react-icons/fa";
 import "../css/BudgetManagement.css"
+import Navbar from '../components/Navbar';
 Chart.register(ArcElement);
 
 
@@ -46,6 +47,9 @@ const BudgetManagement = () => {
   // };
 
   return (
+    <>
+    <Navbar/>
+
     <div className='piemain'>
       <h1 style={{textAlign:"center",color:"white",fontFamily:"georgia",fontWeight:"bold",padding:"40px"}}>Budget Management</h1>
       <div className='alllabels'>
@@ -71,6 +75,10 @@ const BudgetManagement = () => {
       </div>
       
     </div>
+    
+    
+    </>
+   
   );
 };
 

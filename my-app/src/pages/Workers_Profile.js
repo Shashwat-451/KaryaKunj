@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import workers_data from "../assets/data/Workers"
 import "../css/WorkerProfile.css"
 import {useSelector} from "react-redux"
+import Navbar from '../components/Navbar';
 function Workers_Profile(props) {
 
     const { param1 } = useParams();
@@ -11,6 +12,7 @@ function Workers_Profile(props) {
     const data = workers_data.find(worker => String(worker.id) === param1);
     return (
         <>
+        <Navbar/>
             {/* <h1>{data.name}</h1> 
            <h1>{data.address}</h1>
            <h1>{data.available}</h1>   */}

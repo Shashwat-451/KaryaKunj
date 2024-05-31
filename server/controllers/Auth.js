@@ -1,7 +1,11 @@
 const mongoose=require("mongoose");
 const User=require("../models/User")
+// const Labours=require("../models/Labours")
+// const LabourSignup=require("../models/LabourSignup")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken");
+const LabourSignup = require("../models/LabourSignup");
+// import {useSelector} from "react-redux";
 require("dotenv").config();
 exports.signup=async(req,res)=>{
    
@@ -61,6 +65,47 @@ exports.signup=async(req,res)=>{
     }
 }
 
+exports.labourregister=async(req,res)=>{
+    try{
+        const {name,age,phone,address,email,jobrole,availability,projects}=req.body;
+
+        if(!name||!age||!phone||!address||!email||!jobrole||!availability||!projects)
+        {
+            return res.status(403).json({
+                success:false,
+                message:"All fields are required"
+            })
+        }
+        const existinguser=await LabourSignup.find({email});
+console.log("hbh",existinguser);
+        if(existinguser[0])
+        {
+            return res.status(403).json({
+                success:false,
+                message:"User Already Registered"
+            })
+        }
+
+        const user=await LabourSignup.create({
+            name,age,phone,address,email,jobrole,availability,projects
+  })
+
+  return res.json({
+      success:true,
+      message:"User Registered"
+  })
+
+       
+    }
+    catch(err){
+        console.log(err)
+        return res.status(500).json({
+            success:false,
+            message:"Failed to Register",
+            error:err.message
+        })
+    }
+}
 
 exports.login=async(req,res)=>{
    
@@ -118,6 +163,8 @@ exports.login=async(req,res)=>{
                 existinguser,
                 message:"User Logged In successsfully"
             })
+            
+            
         }
         else
         {
@@ -185,4 +232,24 @@ exports.login=async(req,res)=>{
         })
     }
 
+}
+
+
+exports.showAllLabour = async (req, res) => {
+    console.log("Request Is ",req.body);
+    const {email}=req.body;
+    console.log("naam hai",email);
+  try {
+    const allCategorys = await LabourSignup.find()
+    console.log("Backend pe data check",allCategorys)
+    res.status(200).json({
+      success: true,
+      data: allCategorys,
+    })
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    })
+  }
 }

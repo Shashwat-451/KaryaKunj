@@ -21,32 +21,44 @@ import AboutUs from '../src/pages/AboutUs'
 import Footer from './components/Footer';
 import { getUserDetails } from "./services/operations/profileAPI"
 import LabourRegisterForm from './pages/LabourRegisterForm';
+import {setToken} from "../src/slices/authSlice"
+import {setUser} from "../src/slices/profileSlice"
+
 
 function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const storedToken = localStorage.getItem("token");
-  
-    if (storedToken) {
-      try {
-        const token = JSON.parse(storedToken);
-        dispatch(getUserDetails(token, navigate));
-      } catch (error) {
-        console.error("Error parsing stored token:", error);
-        // Handle the error as needed, e.g., log it or show a user-friendly message
-      }
+    console.log("final token hai")
+    if (localStorage.getItem("token")) {
+      const token = JSON.parse(localStorage.getItem("token"))
+      console.log("final token hai",token)
+      // dispatch(getUserDetails(token, navigate))
+      dispatch(setToken(localStorage.getItem("token")))
     }
+    if (localStorage.getItem("user")) {
+      const user = JSON.parse(localStorage.getItem("user"))
+      console.log("final user hai",user)
+      // dispatch(getUserDetails(token, navigate))
+      let userfinal=localStorage.getItem("user")
+      userfinal=JSON.parse(userfinal)
+      dispatch(setUser(userfinal))
+    }
+
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
+  
+
 
   
 
   return (
     <>
-     <Navbar/>
+     {/* <Navbar/> */}
      <Routes>
+      
       <Route path="/" element={<Home/>}/>
       <Route path="/services" element={<Services/>}/>
       <Route path="/hire" element={<Hire/>}/>
@@ -61,8 +73,9 @@ function App() {
       <Route path="/signup" element={<SignUp/>}/>
       <Route path="/aboutus" element={<AboutUs/>}/>
       <Route path="/labourregister" element={<LabourRegisterForm/>}/>
+      
      </Routes>
-     <Footer/>
+     {/* <Footer/> */}
     </>
   );
 }

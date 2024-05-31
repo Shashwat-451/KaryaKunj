@@ -10,7 +10,6 @@ import { setLoading, setToken } from "../../slices/authSlice"
 import { setUser } from "../../slices/profileSlice"
 
 
-
 // const {
 //   SENDOTP_API,
 //   SIGNUP_API,
@@ -113,8 +112,15 @@ export function login(email, password){
       //   ? response.data.existinguser.image
       //   : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.existinguser.firstname} ${response.data.existinguser.lastname}`
      dispatch(setUser(response.data.existinguser))
+     console.log("Response haio",response)
       // dispatch(setUser({ ...response.data.existinguser, image: userImage }))
-      // localStorage.setItem("token", JSON.stringify(response.data.token))
+      
+      localStorage.setItem("token", JSON.stringify(response.data.token))
+     localStorage.setItem("user", JSON.stringify(response.data.existinguser))
+     const user = localStorage.getItem('user');
+     console.log("user is here",user)
+      const token = localStorage.getItem('token');
+      console.log("token is here",token)
       // navigate("/dashboard/my-profile")
       console.log("Inside operations token is",response.data.token);
       
@@ -139,6 +145,38 @@ export function login(email, password){
 
 
       console.log(response);
+  }
+}
+
+export function labourregister(
+  name,
+  age,
+  phone,
+  address,
+  email,
+  jobrole,
+  availability,
+  projects
+){
+  return async (dispatch)=>{
+
+    try{
+       const response=await apiConnector("POST","http://localhost:4000/user/labourregister",{
+        name,
+        age,
+        phone,
+        address,
+        email,
+        jobrole,
+        availability,
+        projects
+       });
+
+       console.log(response);
+    }
+    catch(error){
+          console.log(error);
+    }
   }
 }
 

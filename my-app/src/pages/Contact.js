@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom"
 import { login } from "../services/operations/authAPI"
 import contactimage from "../assets/images/contactusimage.jpg"
 import "../css/Contact.css"
+import Navbar from "../components/Navbar";
 
 function Contact(props) {
 
@@ -70,6 +71,7 @@ function Contact(props) {
       //       </div>   
       //   </>
       <>
+      <Navbar/>
          <div className="contactuswrapper">
             <div className="top_content">
                <h2 style={{textAlign:"center"}}>Have Some Question?</h2>

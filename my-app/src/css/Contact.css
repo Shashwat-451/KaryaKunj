@@ -59,7 +59,12 @@
     font-weight: bold;
 }
 .btn{
+  width:100px;
+  border-radius: 20px;
     background-color: rgb(230,179,53);
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
 }
 .top_content{
     margin-top: 40px;
